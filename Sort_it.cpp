@@ -14,13 +14,13 @@ public:
 
 bool cmp(Student l, Student r)
 {
-    if (l.sum > r.sum)
+    if (l.sum == r.sum)
     {
-        return true;
+        return l.id < r.id;
     }
     else
     {
-        return false;
+        return l.sum > r.sum;
     }
 }
 int main()
@@ -39,7 +39,8 @@ int main()
     {
         a[i].sum = a[i].mathMarks + a[i].engMarks;
     }
-    sort(a,a+n,cmp);
+
+    sort(a, a + n, cmp);
 
     for (int i = 0; i < n; i++)
     {
